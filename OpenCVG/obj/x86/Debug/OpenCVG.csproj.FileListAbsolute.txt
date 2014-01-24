@@ -5,3 +5,28 @@ c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\bin\Debug\O
 c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.StringJoinExtendor.resources
 c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.exe
 c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.pdb
+C:\clones\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.exe
+C:\clones\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.pdb
+C:\clones\OpenCVG\OpenCVG\bin\Debug\cudart32_55.dll
+C:\clones\OpenCVG\OpenCVG\bin\Debug\opencv_core290.dll
+C:\clones\OpenCVG\OpenCVG\bin\Debug\opencv_imgproc290.dll
+C:\clones\OpenCVG\OpenCVG\bin\Debug\opencv_objdetect290.dll
+C:\clones\OpenCVG\OpenCVG\bin\Debug\OpenCVG.exe
+C:\clones\OpenCVG\OpenCVG\bin\Debug\OpenCVG.pdb
+C:\clones\OpenCVG\OpenCVG\bin\Debug\Emgu.CV.dll
+C:\clones\OpenCVG\OpenCVG\bin\Debug\Emgu.CV.UI.dll
+C:\clones\OpenCVG\OpenCVG\bin\Debug\Emgu.Util.dll
+C:\clones\OpenCVG\OpenCVG\bin\Debug\ZedGraph.dll
+C:\clones\OpenCVG\OpenCVG\bin\Debug\Emgu.CV.pdb
+C:\clones\OpenCVG\OpenCVG\bin\Debug\Emgu.CV.xml
+C:\clones\OpenCVG\OpenCVG\bin\Debug\Emgu.CV.UI.pdb
+C:\clones\OpenCVG\OpenCVG\bin\Debug\Emgu.CV.UI.xml
+C:\clones\OpenCVG\OpenCVG\bin\Debug\Emgu.Util.pdb
+C:\clones\OpenCVG\OpenCVG\bin\Debug\Emgu.Util.xml
+C:\clones\OpenCVG\OpenCVG\bin\Debug\ZedGraph.xml
+C:\clones\OpenCVG\OpenCVG\bin\Debug\zh-CN\Emgu.CV.UI.resources.dll
+C:\clones\OpenCVG\OpenCVG\bin\Debug\zh-CN\ZedGraph.resources.dll
+C:\clones\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.csprojResolveAssemblyReference.cache
+C:\clones\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.Properties.Resources.resources
+C:\clones\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.csproj.GenerateResource.Cache
+C:\clones\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.Form1.resources
