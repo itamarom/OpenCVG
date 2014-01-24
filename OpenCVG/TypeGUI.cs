@@ -207,11 +207,11 @@ delegate(Control container, object tag)
 
            if (btn.Tag is object[])
            {
-               ((object[])btn.Tag)[1] = cdlg.Color;
+               ((object[])btn.Tag)[1] = new Bgr(cdlg.Color);
            }
            else
            {
-               btn.Tag = new object[] { btn.Tag, cdlg.Color };
+               btn.Tag = new object[] { btn.Tag, new Bgr(cdlg.Color) };
            }
 
            btn.BackColor = cdlg.Color;
@@ -273,8 +273,8 @@ delegate(Control container, object tag)
         }
 
 
-        Control container;
-        Type[] types;
+        public Control container;
+        public Type[] types;
 
         public FuncForm(Control container, Type[] types)
         {

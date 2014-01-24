@@ -78,6 +78,19 @@ namespace OpenCVG
         {
             this.Text = ", ".Join(ff.GetValues());
 
+
+
+           using (Image<Bgr, Byte> img = new Image<Bgr, byte>(400, 200, new Bgr(255, 0, 0)))
+           {
+               //Create the font
+               MCvFont f = new MCvFont(Emgu.CV.CvEnum.FONT.CV_FONT_HERSHEY_COMPLEX, 1.0, 1.0);
+
+               MethodInfo mi = img.GetType().GetMethod("Draw", ff.types);
+               mi.Invoke(img, ff.GetValues());
+
+               this.BackgroundImage = img.ToBitmap();
+           }
+
         }
     }
 
