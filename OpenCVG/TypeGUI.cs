@@ -105,53 +105,53 @@ namespace OpenCVG
                 ));
 
             guis.Add(typeof(double), new TypeGUI(
-           delegate(Control container, object tag, Point location, object initialValue)
-           {
-               if (initialValue == null)
-                   initialValue = 0;
-
-               TextBox input = new TextBox();
-               input.Location = location;
-               input.Text = initialValue.ToString();
-               input.Tag = tag;
-
-               return input.Size;
-           },
-           delegate(Control container, object tag)
-           {
-               double x = 0;
-
-               try
+               delegate(Control container, object tag, Point location, object initialValue)
                {
-                   x = double.Parse(((TextBox)ControlByTag(container, tag)).Text);
+                   if (initialValue == null)
+                       initialValue = 0;
 
-               }
-               catch (Exception e)
+                   TextBox input = new TextBox();
+                   input.Location = location;
+                   input.Text = initialValue.ToString();
+                   input.Tag = tag;
+
+                   return input.Size;
+               },
+               delegate(Control container, object tag)
                {
-                   //TODO: throw excpetion.
-               }
+                   double x = 0;
 
-               return x;
-           }));
+                   try
+                   {
+                       x = double.Parse(((TextBox)ControlByTag(container, tag)).Text);
+
+                   }
+                   catch (Exception e)
+                   {
+                       //TODO: throw excpetion.
+                   }
+
+                   return x;
+               }));
             guis.Add(typeof(string), new TypeGUI(
-delegate(Control container, object tag, Point location, object initialValue)
-{
-    if (initialValue == null)
-        initialValue = "";
+                delegate(Control container, object tag, Point location, object initialValue)
+                {
+                    if (initialValue == null)
+                        initialValue = "";
 
-    TextBox input = new TextBox();
-    input.Location = location;
-    input.Text = initialValue.ToString();
-    input.Tag = tag;
+                    TextBox input = new TextBox();
+                    input.Location = location;
+                    input.Text = initialValue.ToString();
+                    input.Tag = tag;
 
-    container.Controls.Add(input);
+                    container.Controls.Add(input);
 
-    return input.Size;
-},
-delegate(Control container, object tag)
-{
-    return ((TextBox)ControlByTag(container, tag)).Text;
-}));
+                    return input.Size;
+                },
+                delegate(Control container, object tag)
+                {
+                    return ((TextBox)ControlByTag(container, tag)).Text;
+                }));
 
             guis.Add(typeof(Point), new TypeGUI(
                delegate(Control container, object tag, Point location, object initialValue)
@@ -193,48 +193,47 @@ delegate(Control container, object tag)
                }));
 
             guis.Add(typeof(Bgr), new TypeGUI(
-   delegate(Control container, object tag, Point location, object initialValue)
-   {
-       Button btn = new Button();
-       btn.Text = "Choose color";
-       btn.Location = location;
-       btn.Tag = tag;
+               delegate(Control container, object tag, Point location, object initialValue)
+               {
+                   Button btn = new Button();
+                   btn.Text = "Choose color";
+                   btn.Location = location;
+                   btn.Tag = tag;
 
-       btn.Click += new EventHandler(delegate(object sender, EventArgs e)
-       {
-           ColorDialog cdlg = new ColorDialog();
-           cdlg.ShowDialog();
+                   btn.Click += new EventHandler(delegate(object sender, EventArgs e)
+                   {
+                       ColorDialog cdlg = new ColorDialog();
+                       cdlg.ShowDialog();
 
-           if (btn.Tag is object[])
-           {
-               ((object[])btn.Tag)[1] = new Bgr(cdlg.Color);
-           }
-           else
-           {
-               btn.Tag = new object[] { btn.Tag, new Bgr(cdlg.Color) };
-           }
+                       if (btn.Tag is object[])
+                       {
+                           ((object[])btn.Tag)[1] = new Bgr(cdlg.Color);
+                       }
+                       else
+                       {
+                           btn.Tag = new object[] { btn.Tag, new Bgr(cdlg.Color) };
+                       }
 
-           btn.BackColor = cdlg.Color;
-       });
+                       btn.BackColor = cdlg.Color;
+                   });
 
-       container.Controls.Add(btn);
+                   container.Controls.Add(btn);
 
-       return btn.Size;
-   },
-   delegate(Control container, object tag)
-   {
-       object t = ControlByTag(container, tag).Tag;
-       if (t is object[])
-       {
-           return ((object[])t)[1];
-       }
-       else
-       {
-           return t;
-       }
+                   return btn.Size;
+               },
+               delegate(Control container, object tag)
+               {
+                   object t = ControlByTag(container, tag).Tag;
+                   if (t is object[])
+                   {
+                       return ((object[])t)[1];
+                   }
+                   else
+                   {
+                       return t;
+                   }
 
-   }));
-
+               }));
         }
 
         static String SubTag(object tag, object subtag)

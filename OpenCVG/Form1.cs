@@ -23,9 +23,7 @@ namespace OpenCVG
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             Type t = typeof(Image<Bgr, Byte>);
-
 
             MethodInfo[] ms = GetMethodsByName(t, "Draw");
 
