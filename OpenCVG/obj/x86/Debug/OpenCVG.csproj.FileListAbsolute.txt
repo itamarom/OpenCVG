@@ -1,0 +1,7 @@
+c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.Properties.Resources.resources
+c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.csproj.GenerateResource.Cache
+c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\bin\Debug\OpenCVG.exe
+c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\bin\Debug\OpenCVG.pdb
+c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.StringJoinExtendor.resources
+c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.exe
+c:\users\mazal\documents\visual studio 2010\Projects\OpenCVG\OpenCVG\obj\x86\Debug\OpenCVG.pdb
