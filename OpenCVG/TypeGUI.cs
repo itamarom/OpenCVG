@@ -144,6 +144,8 @@ delegate(Control container, object tag, Point location, object initialValue)
     input.Text = initialValue.ToString();
     input.Tag = tag;
 
+    container.Controls.Add(input);
+
     return input.Size;
 },
 delegate(Control container, object tag)
@@ -190,6 +192,49 @@ delegate(Control container, object tag)
                    return new Point(x, y);
                }));
 
+            guis.Add(typeof(Bgr), new TypeGUI(
+   delegate(Control container, object tag, Point location, object initialValue)
+   {
+       Button btn = new Button();
+       btn.Text = "Choose color";
+       btn.Location = location;
+       btn.Tag = tag;
+
+       btn.Click += new EventHandler(delegate(object sender, EventArgs e)
+       {
+           ColorDialog cdlg = new ColorDialog();
+           cdlg.ShowDialog();
+
+           if (btn.Tag is object[])
+           {
+               ((object[])btn.Tag)[1] = cdlg.Color;
+           }
+           else
+           {
+               btn.Tag = new object[] { btn.Tag, cdlg.Color };
+           }
+
+           btn.BackColor = cdlg.Color;
+       });
+
+       container.Controls.Add(btn);
+
+       return btn.Size;
+   },
+   delegate(Control container, object tag)
+   {
+       object t = ControlByTag(container, tag).Tag;
+       if (t is object[])
+       {
+           return ((object[])t)[1];
+       }
+       else
+       {
+           return t;
+       }
+
+   }));
+
         }
 
         static String SubTag(object tag, object subtag)
@@ -206,7 +251,11 @@ delegate(Control container, object tag)
         {
             for (int i = 0; i < container.Controls.Count; i++)
             {
-                if (container.Controls[i].Tag == tag)
+                object ct = container.Controls[i].Tag;
+                if (ct == null)
+                    continue;
+                if (ct.ToString() == tag.ToString()
+                    || (ct is object[] && ((object[])ct)[0].ToString() == tag.ToString()))
                 {
                     return container.Controls[i];
                 }
@@ -214,7 +263,6 @@ delegate(Control container, object tag)
 
             return null;
         }
-
 
         private Type RemoveRefIfExist(Type t)
         {

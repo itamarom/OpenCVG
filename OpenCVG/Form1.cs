@@ -14,6 +14,8 @@ namespace OpenCVG
 {
     public partial class Form1 : Form
     {
+        FuncForm ff = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -31,10 +33,9 @@ namespace OpenCVG
                 try
                 {
                     Type[] ta = m.GetParameters().Select(p => p.ParameterType).ToArray();
-                    FuncForm ff = new FuncForm(this, ta);
+                    ff = new FuncForm(this, ta);
                     Type bla = ta[1];
                     ff.BuildGui();
-
                     this.label1.Text += "\nSuccess!!!";
                     break;
                 }
@@ -48,7 +49,7 @@ namespace OpenCVG
                
                 }
             }
-            
+
         }
 
         private MethodInfo[] GetMethodsByName(Type t, string name)
@@ -61,7 +62,7 @@ namespace OpenCVG
             
 
 
-            using (Image<Bgr, Byte> img = new Image<Bgr, byte>(400, 200, new Bgr(255, 0, 0)))
+           /* using (Image<Bgr, Byte> img = new Image<Bgr, byte>(400, 200, new Bgr(255, 0, 0)))
             {
                 //Create the font
                 MCvFont f = new MCvFont(Emgu.CV.CvEnum.FONT.CV_FONT_HERSHEY_COMPLEX, 1.0, 1.0);
@@ -70,7 +71,13 @@ namespace OpenCVG
                 img.Draw("Hello, world", ref f, new Point(10, 80), new Bgr(0, 255, 0));
                    
                 this.BackgroundImage = img.ToBitmap();
-            }
+            }*/
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Text = ", ".Join(ff.GetValues());
+
         }
     }
 
